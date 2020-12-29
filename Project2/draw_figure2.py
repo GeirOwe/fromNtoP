@@ -1,7 +1,7 @@
 # Project 2: paint a pretty picture
 
 # The ReportLab Toolkit (https://www.reportlab.com/) is a library for programatically creating documents 
-# in PDF format. It's a robust, flexible, time-proven, industry-strength solution. #It's free, open-source 
+# in PDF format. It's a robust, flexible, time-proven, industry-strength solution. It's free, open-source 
 # software written in Python. It lets you quickly and easily create or automate complex or data-driven documents. 
 # The ReportLab Toolkit has evolved over the years in direct response to the real-world reporting needs of large institutions.
 from reportlab.graphics.shapes import *
@@ -17,7 +17,7 @@ def get_data():
         dataJson = json.load(f)
  
     #add the data in the json file to the dataset
-    dataSet2 = []
+    dataSet = []
     for element in dataJson:
         #split time into two columns
         splitX = element['time-tag'].split('-')
@@ -25,9 +25,9 @@ def get_data():
         monthX = int(splitX[1])
 
         #add the element-tuple to the list
-        dataSet2.append(tuple((yearX, monthX , element['predicted_ssn'], element['high_ssn'], element['low_ssn'])))  ## add list of elems at end
+        dataSet.append(tuple((yearX, monthX , element['predicted_ssn'], element['high_ssn'], element['low_ssn'])))  ## add list of elems at end
     
-    return dataSet2
+    return dataSet
 #end function
 
 #get the data
