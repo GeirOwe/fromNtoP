@@ -1,0 +1,569 @@
+
+        <html>
+          <head>
+            <title>Today's News</title>
+          </head>
+          <body>
+          <h1>Today's News</h1>
+        
+<ul>
+  <li><a href="#1">[ANN] Pycopy/pycopy-lib 3.4.0, a minimalist Python dialect</a></li>
+  <li><a href="#2">pytest 6.2.0</a></li>
+  <li><a href="#3">SQLObject 3.9.0</a></li>
+  <li><a href="#4">pytest 6.2.1</a></li>
+  <li><a href="#5">[ANN] Datatest 0.11.0 Released</a></li>
+  <li><a href="#6">Trac 1.5.2 Released</a></li>
+  <li><a href="#7">[RELEASE] Python 3.8.7 is now available</a></li>
+  <li><a href="#8">[baseline 1.2.0] Easy String Baseline</a></li>
+  <li><a href="#9">[ANN] pyastinterp - Tree-walking interpreter for Python (+ "advent of code" idea)</a></li>
+  <li><a href="#10">ANN: SfePy 2020.4</a></li>
+</ul>
+<h2><a name="1">[ANN] Pycopy/pycopy-lib 3.4.0, a minimalist Python dialect</a></h2>
+<pre>Hello,
+
+Pycopy is a minimalist, lightweight, resource-efficient implementation
+of Python(-like) language. Pycopy to CPython is a similar thing as
+Scheme to Common Lisp. Executable sizes of 300-400KB, instant startup,
+no need to carry around large monolithic library consisting largely of
+legacy modules - some but not all of Pycopy's features.
+
+Project page: https://github.com/pfalcon/pycopy
+
+Now has website too: https://pycopy.github.io/
+
+The 3.4.0 release implements initial version of "strict execution mode"
+support, which is roughly a way to enforce constantness at the runtime,
+the complete proposal was posted to the python-ideas mailing list:
+https://mail.python.org/archives/list/python-ideas@python.org/thread/KGN4Q2EMOMGHLMUH4ITJB4ES7NR3FSB7/
+
+Pycopy's standard library, pycopy-lib
+https://github.com/pfalcon/pycopy-lib , also sees continued
+development, in particular the "re" module compatibility with CPython
+was largely improved.
+
+Prebuilt binaries of this release are available at
+https://github.com/pfalcon/pycopy/releases/tag/v3.4.0
+
+
+More details about Pycopy
+-------------------------
+
+Pycopy strives to define a core language features suitable to easily
+develop efficient software, while allow for extensibility to a wider
+(and much more bloaty and less efficient) set of features for
+compatibility with existing software.
+
+Pycopy doesn't come with bulky hazardous lead-acid batteries. Instead,
+a set of a few core modules are included builtin: inspired, being a
+noticeable subset, and a little bit of extension, of the corresponding
+CPython modules. Also, clearly namespaced, to still allow room to
+implement fully compatible CPython modules. These new modules aren't
+intended to be an adhoc thing, just an alternative API with a
+constraint of minimality. Implementation of that API also exists for
+CPython (WIP), allowing Pycopy -> CPython forward compatibility.
+
+The rest is handled outside the core language, via a separate project,
+pycopy-lib: https://github.com/pfalcon/pycopy-lib , which strives to
+port CPython stdlib to Pycopy, while, where needed, provide more
+lightweight module variants and extensions.
+
+Pycopy is a full-stack project, with ecosystem including a web
+micro-framework, pure-Python Python parser, FFMPEG bindings, SDL
+bindings, LLVM bindings, etc.: https://github.com/topics/pycopy 
+
+
+-- 
+Best regards,
+ Paul                          mailto:pmiscml@gmail.com
+
+</pre>
+<h2><a name="2">pytest 6.2.0</a></h2>
+<pre>cHl0ZXN0LTYuMi4wIA0KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQoN
+ClRoZSBweXRlc3QgdGVhbSBpcyBwcm91ZCB0byBhbm5vdW5jZSB0aGUgNi4yLjAgcmVsZWFzZSEN
+Cg0KVGhpcyByZWxlYXNlIGNvbnRhaW5zIG5ldyBmZWF0dXJlcywgaW1wcm92ZW1lbnRzLCBidWcg
+Zml4ZXMsIGFuZCBicmVha2luZyBjaGFuZ2VzLCBzbyB1c2Vycw0KYXJlIGVuY291cmFnZWQgdG8g
+dGFrZSBhIGxvb2sgYXQgdGhlIENIQU5HRUxPRyBjYXJlZnVsbHk6DQoNCiAgICBodHRwczovL2Rv
+Y3MucHl0ZXN0Lm9yZy9lbi9zdGFibGUvY2hhbmdlbG9nLmh0bWwNCg0KRm9yIGNvbXBsZXRlIGRv
+Y3VtZW50YXRpb24sIHBsZWFzZSB2aXNpdDoNCg0KICAgIGh0dHBzOi8vZG9jcy5weXRlc3Qub3Jn
+L2VuL3N0YWJsZS8NCg0KQXMgdXN1YWwsIHlvdSBjYW4gdXBncmFkZSBmcm9tIFB5UEkgdmlhOg0K
+DQogICAgcGlwIGluc3RhbGwgLVUgcHl0ZXN0DQoNClRoYW5rcyB0byBhbGwgb2YgdGhlIGNvbnRy
+aWJ1dG9ycyB0byB0aGlzIHJlbGVhc2U6DQoNCiogQWRhbSBKb2huc29uDQoqIEFsYmVydCBWaWxs
+YW5vdmEgZGVsIE1vcmFsDQoqIEFudGhvbnkgU290dGlsZQ0KKiBBbnRvbg0KKiBBcmllbCBQaWxs
+ZW1lcg0KKiBCcnVubyBPbGl2ZWlyYQ0KKiBDaGFybGVzIEFyYWNpbA0KKiBDaHJpc3RpbmUgTQ0K
+KiBDaHJpc3RpbmUgTWVja2xlbmJvcmcNCiogQ3Nlcm5hIFpzb2x0DQoqIERvbWluaWMgTW9ydGxv
+Y2sNCiogRW1pZWwgdmFuIGRlIExhYXINCiogRmxvcmlhbiBCcnVoaW4NCiogR2Fydml0IFNodWJo
+YW0NCiogR3VzdGF2byBDYW1hcmdvDQoqIEh1Z28gTWFydGlucw0KKiBIdWdvIHZhbiBLZW1lbmFk
+ZQ0KKiBKYWtvYiB2YW4gU2FudGVuDQoqIEpvc2lhcyBBdXJlbA0KKiBKw7xyZ2VuIEdtYWNoDQoq
+IEthcnRoaWtleWFuIFNpbmdhcmF2ZWxhbg0KKiBLYXRhcnp5bmENCiogS3lsZSBBbHRlbmRvcmYN
+CiogTWFudWVsIE1hcmnDsWV6DQoqIE1hdHRoZXcgSHVnaGVzDQoqIE1hdHRoaWFzIEdhYnJpZWwN
+CiogTWF4IFZvaXRrbw0KKiBNYXhpbWlsaWFuIENvc21vIFNpdHRlcg0KKiBNaWtoYWlsIEZlc2Vu
+a28NCiogTmltZXNoIFZhc2hpc3RoYQ0KKiBQZWRybyBBbGdhcnZpbw0KKiBQZXR0ZXIgU3RyYW5k
+bWFyaw0KKiBQcmFraGFyIEd1cnVuYW5pDQoqIFByYXNoYW50IFNoYXJtYQ0KKiBSYW4gQmVuaXRh
+DQoqIFJvbm55IFBmYW5uc2NobWlkdA0KKiBTYW5rZXQgRHV0aGFkZQ0KKiBTaHViaGFtIEFkZXAN
+CiogU2ltb24gSw0KKiBUYW52aSBNZWh0YQ0KKiBUaG9tYXMgR3JhaW5nZXINCiogVGltIEhvZmZt
+YW5uDQoqIFZhc2lsaXMgR2VyYWthcmlzDQoqIFdpbGxpYW0gSmFtaXIgU2lsdmENCiogWmFjIEhh
+dGZpZWxkLURvZGRzDQoqIGNycmlja3MNCiogZGVwZW5kYWJvdFtib3RdDQoqIGR1dGhhZGVzDQoq
+IGZyYW5rZ2VyaGFyZHQNCioga3dnY2hpDQoqIG1pY2tleXBhc2gNCiogc3ltb25rDQoNCg0KSGFw
+cHkgdGVzdGluZywNClRoZSBweXRlc3QgRGV2ZWxvcG1lbnQgVGVhbQ==
+
+</pre>
+<h2><a name="3">SQLObject 3.9.0</a></h2>
+<pre>Hello!
+
+I'm pleased to announce version 3.9.0, the first release
+of branch 3.9 of SQLObject.
+
+
+What's new in SQLObject
+=======================
+
+Contributors for this release are:
+
++ Michael S. Root, Ameya Bapat - ``JSONCol``;
+
++ Jerry Nance - reported a bug with ``DateTime`` from ``Zope``.
+
+Features
+--------
+
+* Add ``JSONCol``: a universal json column that converts simple Python objects
+  (None, bool, int, float, long, dict, list, str/unicode to/from JSON using
+  json.dumps/loads. A subclass of StringCol. Requires ``VARCHAR``/``TEXT``
+  columns at backends, doesn't work with ``JSON`` columns.
+
+* Extend/fix support for ``DateTime`` from ``Zope``.
+
+* Drop support for very old version of ``mxDateTime``
+  without ``mx.`` namespace.
+
+Drivers
+-------
+
+* Support `mariadb <https://pypi.org/project/mariadb/>`_.
+
+CI
+--
+
+* Run tests with Python 3.9 at Travis and AppVeyor.
+
+For a more complete list, please see the news:
+http://sqlobject.org/News.html
+
+
+What is SQLObject
+=================
+
+SQLObject is an object-relational mapper.  Your database tables are described
+as classes, and rows are instances of those classes.  SQLObject is meant to be
+easy to use and quick to get started with.
+
+It currently supports MySQL, PostgreSQL and SQLite; connections to other
+backends - Firebird, Sybase, MSSQL and MaxDB (also known as SAPDB) - are
+lesser debugged).
+
+Python 2.7 or 3.4+ is required.
+
+
+Where is SQLObject
+==================
+
+Site:
+http://sqlobject.org
+
+Development:
+http://sqlobject.org/devel/
+
+Mailing list:
+https://lists.sourceforge.net/mailman/listinfo/sqlobject-discuss
+
+Download:
+https://pypi.org/project/SQLObject/3.9.0
+
+News and changes:
+http://sqlobject.org/News.html
+
+StackOverflow:
+https://stackoverflow.com/questions/tagged/sqlobject
+
+
+Example
+=======
+
+Create a simple class that wraps a table::
+
+  >>> from sqlobject import *
+  >>>
+  >>> sqlhub.processConnection = connectionForURI('sqlite:/:memory:')
+  >>>
+  >>> class Person(SQLObject):
+  ...     fname = StringCol()
+  ...     mi = StringCol(length=1, default=None)
+  ...     lname = StringCol()
+  ...
+  >>> Person.createTable()
+
+Use the object::
+
+  >>> p = Person(fname="John", lname="Doe")
+  >>> p
+  <Person 1 fname='John' mi=None lname='Doe'>
+  >>> p.fname
+  'John'
+  >>> p.mi = 'Q'
+  >>> p2 = Person.get(1)
+  >>> p2
+  <Person 1 fname='John' mi='Q' lname='Doe'>
+  >>> p is p2
+  True
+
+Queries::
+
+  >>> p3 = Person.selectBy(lname="Doe")[0]
+  >>> p3
+  <Person 1 fname='John' mi='Q' lname='Doe'>
+  >>> pc = Person.select(Person.q.lname=="Doe").count()
+  >>> pc
+  1
+
+Oleg.
+-- 
+    Oleg Broytman            https://phdru.name/            phd@phdru.name
+           Programmers don't die, they just GOSUB without RETURN.
+
+</pre>
+<h2><a name="4">pytest 6.2.1</a></h2>
+<pre>cHl0ZXN0IDYuMi4xIGhhcyBqdXN0IGJlZW4gcmVsZWFzZWQgdG8gUHlQSS4NCg0KVGhpcyBpcyBh
+IGJ1Zy1maXggcmVsZWFzZSwgYmVpbmcgYSBkcm9wLWluIHJlcGxhY2VtZW50LiBUbyB1cGdyYWRl
+OjoNCg0KICBwaXAgaW5zdGFsbCAtLXVwZ3JhZGUgcHl0ZXN0DQoNClRoZSBmdWxsIGNoYW5nZWxv
+ZyBpcyBhdmFpbGFibGUgYXQNCmh0dHBzOi8vZG9jcy5weXRlc3Qub3JnL2VuL3N0YWJsZS9jaGFu
+Z2Vsb2cuaHRtbC4NCg0KVGhhbmtzIHRvIGFsbCBvZiB0aGUgY29udHJpYnV0b3JzIHRvIHRoaXMg
+cmVsZWFzZToNCg0KKiBCcnVubyBPbGl2ZWlyYQ0KKiBKYWtvYiB2YW4gU2FudGVuDQoqIFJhbiBC
+ZW5pdGENCg0KDQpIYXBweSB0ZXN0aW5nLA0KVGhlIHB5dGVzdCBEZXZlbG9wbWVudCBUZWFtDQo=
+
+</pre>
+<h2><a name="5">[ANN] Datatest 0.11.0 Released</a></h2>
+<pre>SSdtIHBsZWFzZWQgdG8gYW5ub3VuY2UgdGhlIHJlbGVhc2Ugb2YgRGF0YXRlc3QgdmVyc2lvbiAw
+LjExLjAuDQoNCkRhdGF0ZXN0IGltcGxlbWVudHMgYSBzeXN0ZW0gb2YgKnZhbGlkYXRpb24qIG1l
+dGhvZHMsICpkaWZmZXJlbmNlKg0KY2xhc3NlcywgYW5kICphY2NlcHRhbmNlKiBjb250ZXh0IG1h
+bmFnZXJzLiBJdCBjYW4gYmUgdXNlZCBkaXJlY3RseQ0KaW4geW91ciBvd24gcHJvamVjdHMgb3Ig
+YXMgcGFydCBvZiBhIHRlc3RpbmcgZnJhbWV3b3JrIGxpa2UgcHl0ZXN0DQpvciB1bml0dGVzdC4N
+Cg0KVGhpcyBpcyBhIGxhcmdlIGFuZCBsb25nLWF3YWl0ZWQgdXBkYXRlLiBJZiB5b3UgYXJlIHVw
+Z3JhZGluZw0KZnJvbSBhbiBvbGRlciB2ZXJzaW9uIG9mIGRhdGF0ZXN0LCBwYXkgc3BlY2lhbCBh
+dHRlbnRpb24gdG8gdGhlDQppbnN0YWxsYXRpb24gc3RlcHMgYmVsb3cuDQoNCkhJR0hMSUdIVFMg
+SU5DTFVERToNCg0KKiBDb21wbGV0ZSByZXdyaXRlIG9mIEludHJvZHVjdGlvbiwgSG93LXRvLCBh
+bmQgRGlzY3Vzc2lvbiBkb2NzOg0KICAgIC0gaHR0cHM6Ly9kYXRhdGVzdC5yZWFkdGhlZG9jcy5p
+by8NCiogQWRkZWQgZXh0ZW5zaW9uIGFjY2Vzc29ycyBmb3IgdGlnaHRlciBQYW5kYXMgaW50ZWdy
+YXRpb24uDQoqIEFkZGVkIGZlYXR1cmVzIGZvciBOdW1QeSBhbmQgU3F1aW50IGludGVncmF0aW9u
+Lg0KKiBGaXhlZCBidWcgd2l0aCBgcHl0ZXN0LXhkaXN0YCBpbnRlcm9wZXJhYmlsaXR5Lg0KKiBN
+b2RpZmllcyBzb21lIHVzZXItZmFjaW5nIEFQSXMgdG8gaW1wcm92ZSB1c2FiaWxpdHkuDQoqIE1v
+dmVkIHRoZSBxdWVyeSBBUEkgaW50byBhIHNlcGFyYXRlIHByb2plY3QsICoqc3F1aW50Kio6DQog
+ICAgLSBodHRwczovL3B5cGkub3JnL3Byb2plY3Qvc3F1aW50Lw0KKiBNb3ZlZCBgZ2V0X3JlYWRl
+cigpYCBpbnRvIGEgc2VwYXJhdGUgcHJvamVjdCwgKipnZXQtcmVhZGVyKio6DQogICAgLSBodHRw
+czovL3B5cGkub3JnL3Byb2plY3QvZ2V0LXJlYWRlci8NCg0KRm9yIG1vcmUgaW5mb3JtYXRpb24g
+c2VlOg0KICAgIC0gaHR0cHM6Ly9naXRodWIuY29tL3NoYXduYnJvd24vZGF0YXRlc3QvYmxvYi9t
+YXN0ZXIvQ0hBTkdFTE9HDQoNCkxJTktTOg0KDQotIFB5UEk6IGh0dHBzOi8vcHlwaS5vcmcvcHJv
+amVjdC9kYXRhdGVzdC8NCi0gR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2hhd25icm93bi9k
+YXRhdGVzdA0KLSBEb2NzOiBodHRwczovL2RhdGF0ZXN0LnJlYWR0aGVkb2NzLmlvL2VuL3N0YWJs
+ZS8NCg0KSU5TVEFMTCBPUiBVUERBVEU6DQoNClRoZSBlYXNpZXN0IHdheSB0byBpbnN0YWxsIGRh
+dGF0ZXN0IGlzIHRvIHVzZSBwaXA6DQoNCiAgIGBwaXAgaW5zdGFsbCBkYXRhdGVzdGANCg0KSWYg
+eW91IGFyZW4ndCB3b3JyaWVkIGFib3V0IHN1cHBvcnRpbmcgYSBjb2RlYmFzZSBvZiBvbGRlciBz
+Y3JpcHRzLA0KdXBncmFkZSBhbiBleGlzdGluZyBpbnN0YWxsYXRpb24gd2l0aDoNCg0KICAgYHBp
+cCBpbnN0YWxsIC0tdXBncmFkZSBkYXRhdGVzdGANCg0KSWYgeW91IGhhdmUgYW4gZXhpc3Rpbmcg
+Y29kZWJhc2Ugb2Ygb2xkZXIgZGF0YXRlc3Qgc2NyaXB0cywgeW91IHNob3VsZA0KdXBncmFkZSB1
+c2luZyB0aGUgZm9sbG93aW5nIHN0ZXBzOg0KDQoxOiBJbnN0YWxsIGRhdGF0ZXN0IDAuMTAuMCBm
+aXJzdDoNCg0KICAgYHBpcCBpbnN0YWxsIC0tZm9yY2UtcmVpbnN0YWxsIGRhdGF0ZXN0PT0wLjEw
+LjBgDQoNCjI6IFJ1biB5b3VyIGV4aXN0aW5nIGNvZGUgYW5kIGNoZWNrIGZvciBEZXByZWNhdGlv
+bldhcm5pbmdzLg0KDQozOiBVcGRhdGUgdGhlIHBhcnRzIG9mIHlvdXIgY29kZSB0aGF0IHVzZSBk
+ZXByZWNhdGVkIGZlYXR1cmVzLg0KDQo0OiBPbmNlIHlvdXIgY29kZSBpcyBydW5uaW5nIHdpdGhv
+dXQgRGVwcmVjYXRpb25XYXJuaW5ncywNCiAgIGluc3RhbGwgdGhlIGxhdGVzdCB2ZXJzaW9uIG9m
+IGRhdGF0ZXN0LCAwLjExLjA6DQoNCiAgIGBwaXAgaW5zdGFsbCAtLXVwZ3JhZGUgZGF0YXRlc3Rg
+DQo=
+
+</pre>
+<h2><a name="6">Trac 1.5.2 Released</a></h2>
+<pre>Trac 1.5.2, the latest development release leading up to Trac 1.6, is
+available. This is the first Trac release to support Python 3. Thanks
+to Jun Omae for doing the majority of the Python 3 porting work!
+
+You will find this release at the usual places:
+
+https://trac.edgewall.org/wiki/TracDownload#LatestDevRelease
+
+You can find the detailed release notes for 1.5.2 on the following
+pages:
+https://trac.edgewall.org/wiki/1.5/TracChangeLog
+https://trac.edgewall.org/wiki/TracDev/ReleaseNotes/1.6#MaintenanceReleases
+
+Now to the packages themselves:
+
+URLs:
+
+https://download.edgewall.org/trac/Trac-1.5.2.tar.gz
+https://download.edgewall.org/trac/Trac-1.5.2-py3-none-any.whl
+https://download.edgewall.org/trac/Trac-1.5.2.win32.exe
+https://download.edgewall.org/trac/Trac-1.5.2.win-amd64.exe
+
+MD5 sums:
+
+b5d615c5e99daca4a4bd750617c24464  Trac-1.5.2.tar.gz
+1538366a7bc5aadd5fa8df0e90314d53  Trac-1.5.2-py3-none-any.whl
+fe0472636045d4b9639b0b653a0780b2  Trac-1.5.2.win32.exe
+e09c97d3faa811b1e82868f0e0fb17c9  Trac-1.5.2.win-amd64.exe
+
+SHA256 sums:
+
+dac241e8018e11374cfabe68f902d815948611481f4ecb565e4f076768547e39  Trac-1.5.2.tar.gz
+60aa73866164f7eb8702e65054ebf6c5f94c7f367731144e19f938dd8e43269a  Trac-1.5.2-py3-none-any.whl
+11142ffc2c87fe1905211aad671d4368e1f7182b5cddc4ed6747cb56a007d68b  Trac-1.5.2.win32.exe
+b45722d66f44e57a8747445205c619f71ecfe3fab785ab2b2f22a01bbcd8137c  Trac-1.5.2.win-amd64.exe
+
+Acknowledgements
+================
+
+Many thanks to the growing number of people who have, and continue to,
+support the project. Also our thanks to all people providing feedback
+and bug reports that helps us make Trac better, easier to use and
+more effective. Without your invaluable help, Trac would not evolve.
+Thank you all.
+
+Finally, we hope that Trac will be useful to like-minded programmers
+around the world, and that this release will be an improvement over
+the last version.
+
+Please let us know.
+
+/The Trac Team https://trac.edgewall.org/
+
+</pre>
+<h2><a name="7">[RELEASE] Python 3.8.7 is now available</a></h2>
+<pre>UHl0aG9uIDMuOC43IGlzIHRoZSBzZXZlbnRoIG1haW50ZW5hbmNlIHJlbGVhc2Ugb2YgUHl0aG9u
+IDMuOC4gR28gZ2V0IGl0IGhlcmU6DQoNCmh0dHBzOi8vd3d3LnB5dGhvbi5vcmcvZG93bmxvYWRz
+L3JlbGVhc2UvcHl0aG9uLTM4Ny8gPGh0dHBzOi8vd3d3LnB5dGhvbi5vcmcvZG93bmxvYWRzL3Jl
+bGVhc2UvcHl0aG9uLTM4Ny8+DQpOb3RlOiB0aGlzIGlzIGEgYnVnZml4IHJlbGVhc2UgZm9yIHRo
+ZSAzLjggc2VyaWVzIHdoaWNoIHdhcyBzdXBlcnNlZGVkIGJ5IFB5dGhvbiAzLjksIGN1cnJlbnRs
+eSB0aGUgbGF0ZXN0IGZlYXR1cmUgcmVsZWFzZSBzZXJpZXMgb2YgUHl0aG9uIDMuIFlvdSBjYW4g
+ZmluZCB0aGUgbGF0ZXN0IHJlbGVhc2Ugb2YgMy45LnggaGVyZSA8aHR0cHM6Ly93d3cucHl0aG9u
+Lm9yZy9kb3dubG9hZHMvPi4NCg0KTWFpbnRlbmFuY2UgcmVsZWFzZXMgZm9yIHRoZSAzLjggc2Vy
+aWVzIHdpbGwgY29udGludWUgYXQgcmVndWxhciBiaS1tb250aGx5IGludGVydmFscywgd2l0aCAz
+LjguOCBwbGFubmVkIGZvciBGZWJydWFyeSAyMDIxLg0KDQptYWNPUyAxMSBCaWcgU3VyIG5vdCBm
+dWxseSBzdXBwb3J0ZWQNCg0KUHl0aG9uIDMuOC43IGlzIG5vdCB5ZXQgZnVsbHkgc3VwcG9ydGVk
+IG9uIG1hY09TIDExIEJpZyBTdXIuIEl0IHdpbGwgaW5zdGFsbCBvbiBtYWNPUyAxMSBCaWcgU3Vy
+IGFuZCB3aWxsIHJ1biBvbiBBcHBsZSBTaWxpY29uIE1hY3MgdXNpbmcgUm9zZXR0YSAyIHRyYW5z
+bGF0aW9uLiBIb3dldmVyLCBhIGZldyBmZWF0dXJlcyBkbyBub3Qgd29yayBjb3JyZWN0bHksIG1v
+c3Qgbm90aWNlYWJseSB0aG9zZSBpbnZvbHZpbmcgc2VhcmNoaW5nIGZvciBzeXN0ZW0gbGlicmFy
+aWVzICh2cyB1c2VyIGxpYnJhcmllcykgc3VjaCBhcyBjdHlwZXMudXRpbC5maW5kX2xpYnJhcnko
+KSBhbmQgaW4gRGlzdHV0aWxzLiBUaGlzIGxpbWl0YXRpb24gYWZmZWN0cyBib3RoIEFwcGxlIFNp
+bGljb24gYW5kIEludGVsIHByb2Nlc3NvcnMuIFdlIGFyZSBsb29raW5nIGludG8gaW1wcm92aW5n
+IHRoZSBzaXR1YXRpb24gZm9yIFB5dGhvbiAzLjguOC4NCg0KUHl0aG9uIDMuOS4xIDxodHRwczov
+L3d3dy5weXRob24ub3JnL2Rvd25sb2Fkcy9yZWxlYXNlL3B5dGhvbi0zOTEvPiBwcm92aWRlcyBm
+dWxsIHN1cHBvcnQgZm9yIEJpZyBTdXIgYW5kIEFwcGxlIFNpbGljb24gTWFjcywgaW5jbHVkaW5n
+IGJ1aWxkaW5nIG5hdGl2ZWx5IG9uIEFwcGxlIFNpbGljb24gTWFjcyBhbmQgc3VwcG9ydCBmb3Ig
+dW5pdmVyc2FsMiBiaW5hcmllcy4NCg0KV2hhdOKAmXMgbmV3Pw0KDQpUaGUgUHl0aG9uIDMuOCBz
+ZXJpZXMgY29udGFpbnMgbWFueSBuZXcgZmVhdHVyZXMgYW5kIG9wdGltaXphdGlvbnMgb3ZlciAz
+LjcuIFNlZSB0aGUg4oCcV2hhdOKAmXMgTmV3IGluIFB5dGhvbiAzLjggPGh0dHBzOi8vZG9jcy5w
+eXRob24ub3JnLzMuOC93aGF0c25ldy8zLjguaHRtbD7igJ0gZG9jdW1lbnQgZm9yIG1vcmUgaW5m
+b3JtYXRpb24gYWJvdXQgZmVhdHVyZXMgaW5jbHVkZWQgaW4gdGhlIDMuOCBzZXJpZXMuDQoNCkRl
+dGFpbGVkIGluZm9ybWF0aW9uIGFib3V0IGFsbCBjaGFuZ2VzIG1hZGUgaW4gdmVyc2lvbiAzLjgu
+NyBzcGVjaWZpY2FsbHkgY2FuIGJlIGZvdW5kIGluIGl0cyBjaGFuZ2UgbG9nIDxodHRwczovL2Rv
+Y3MucHl0aG9uLm9yZy9yZWxlYXNlLzMuOC43L3doYXRzbmV3L2NoYW5nZWxvZy5odG1sI3B5dGhv
+bi0zLTgtNz4uIE5vdGUgdGhhdCBjb21wYXJlZCB0byAzLjguNiB0aGlzIHJlbGVhc2UgYWxzbyBj
+b250YWlucyBhbGwgY2hhbmdlcyBwcmVzZW50IGluIDMuOC43cmMxLg0KDQpXZSBob3BlIHlvdSBl
+bmpveSBQeXRob24gMy44IQ0KDQpUaGFua3MgdG8gYWxsIG9mIHRoZSBtYW55IHZvbHVudGVlcnMg
+d2hvIGhlbHAgbWFrZSBQeXRob24gRGV2ZWxvcG1lbnQgYW5kIHRoZXNlIHJlbGVhc2VzIHBvc3Np
+YmxlISBQbGVhc2UgY29uc2lkZXIgc3VwcG9ydGluZyBvdXIgZWZmb3J0cyBieSB2b2x1bnRlZXJp
+bmcgeW91cnNlbGYgb3IgdGhyb3VnaCBvcmdhbml6YXRpb24gY29udHJpYnV0aW9ucyB0byB0aGUg
+UHl0aG9uIFNvZnR3YXJlIEZvdW5kYXRpb24uDQoNCllvdXIgZnJpZW5kbHkgcmVsZWFzZSB0ZWFt
+LA0KTmVkIERlaWx5IEBuYWQgPGh0dHBzOi8vZGlzY3Vzcy5weXRob24ub3JnL3UvbmFkPg0KU3Rl
+dmUgRG93ZXIgQHN0ZXZlLmRvd2VyIDxodHRwczovL2Rpc2N1c3MucHl0aG9uLm9yZy91L3N0ZXZl
+LmRvd2VyPg0KxYF1a2FzeiBMYW5nYSBAYW1idiA8aHR0cHM6Ly9kaXNjdXNzLnB5dGhvbi5vcmcv
+dS9hbWJ2Pg==
+
+</pre>
+<h2><a name="8">[baseline 1.2.0] Easy String Baseline</a></h2>
+<pre>SSBhbSBwbGVhc2VkIHRvIGFubm91bmNlIHRoZSBhdmFpbGFiaWxpdHkgb2YgYSBuZXcgYmFja3dh
+cmRzIGNvbXBhdGlibGUNCmZlYXR1cmUgaW4gdGhlICJiYXNlbGluZSIgcGFja2FnZSAocmVsZWFz
+ZXMgMS4yLjApLiBUaGlzIHJlbGVhc2UgaW5jbHVkZXMNCnN1cHBvcnQgZm9yIFB5dGhvbiAzLjkg
+YW5kIHJlbW92YWwgb2Ygc3VwcG9ydCBmb3IgUHl0aG9uIDMuNCBhbmQgMy41Lg0KDQpUaGlzIHRv
+b2wgZmFjaWxpdGF0ZXMgc3RyZWFtbGluaW5nIHRoZSBjcmVhdGlvbiBhbmQgbWFpbnRlbmFuY2Ug
+b2YgdGVzdHMNCndoaWNoIGNvbXBhcmUgc3RyaW5nDQpvdXRwdXQgYWdhaW5zdCBhIGJhc2VsaW5l
+LiBJdCBvZmZlcnMgYSBtZWNoYW5pc20gdG8gY29tcGFyZSBhIHN0cmluZyBhZ2FpbnN0DQphIGJh
+c2VsaW5lZCBjb3B5IGFuZCB1cGRhdGUgdGhlIGJhc2VsaW5lZCBjb3B5IHRvIG1hdGNoIHRoZSBu
+ZXcgdmFsdWUgd2hlbiBhDQptaXNtYXRjaCBvY2N1cnMuIFRoZSB1cGRhdGUgcHJvY2VzcyBpbmNs
+dWRlcyBhIG1hbnVhbCBzdGVwIHRvIGZhY2lsaXRhdGUgYQ0KcmV2aWV3IG9mIHRoZSBjaGFuZ2Ug
+YmVmb3JlIGFjY2VwdGFuY2UuIFRoZSB0b29sIHVzZXMgbXVsdGktbGluZSBzdHJpbmcNCmZvcm1h
+dA0KZm9yIHN0cmluZyBiYXNlbGluZXMgdG8gaW1wcm92ZSByZWFkYWJpbGl0eSBmb3IgaHVtYW4g
+cmV2aWV3Lg0KDQpEb2NzOiBodHRwczovL2Jhc2VsaW5lLnJlYWR0aGVkb2NzLmlvL2VuL2xhdGVz
+dC8NClB5UGk6IGh0dHBzOi8vcHlwaS5vcmcvcHJvamVjdC9iYXNlbGluZS8NClJlcG86IGh0dHBz
+Oi8vZ2l0aHViLmNvbS9kbWdhc3MvYmFzZWxpbmUNCg0KTGljZW5zZTogTUlUDQoNCldpdGggUmVn
+YXJkcywNCkRhbiBHYXNzDQooZGFuLmdhc3MgYXQgZ21haWwpDQoNCg0KKioqKioqKioqKioqKioq
+KioNCjEuMi4wIDIwMjAtREVDLTIyDQoqKioqKioqKioqKioqKioqKg0KDQorIEFkZCBgYC0tZm9y
+Y2VgYCBjb21tYW5kIGxpbmUgb3B0aW9uIHRvIHN1cHByZXNzIGFja25vd2xlZGdlbWVudA0KICBw
+cm9tcHQuDQoNCisgQWRkIFB5dGhvbiAzLjkgc3VwcG9ydCBhZHZlcnRpc2VtZW50LiAoUmVncmVz
+c2lvbiB0ZXN0aW5nDQogIGFkZGVkIHRvIHRoZSByZWxlYXNlIHByb2Nlc3MuKQ0KDQorIFJlbW92
+ZSBQeXRob24gMy40IGFuZCAzLjUgc3VwcG9ydCBhZHZlcnRpc2VtZW50LiAoUmVncmVzc2lvbiB0
+ZXN0aW5nDQogIHJlbW92ZWQgZnJvbSByZWxlYXNlIHByb2Nlc3MuKSBOb3RoaW5nIGJsb2NrcyBp
+bnN0YWxsYXRpb24sIGJ1dCBubw0KICBwcm9taXNlIGV4aXN0cyB0aGF0IHRoZSBwYWNrYWdlIHdv
+cmtzIHdpdGggdGhvc2UgaW50ZXJwcmV0ZXIgdmVyc2lvbnMuDQo=
+
+</pre>
+<h2><a name="9">[ANN] pyastinterp - Tree-walking interpreter for Python (+ "advent of code" idea)</a></h2>
+<pre>Hello,
+
+pyastinterp is a tree-walking (aka meta-circular) interpreter for
+Python. It was the most complete tree-walking interpreter as of a year
+ago. As it was written as a personal "advent of code" project during
+the winter holidays of 2019/2020.
+
+I remembered about it this holiday season, and decided to post about
+it, both as a holiday eyecandy, and as a challenge to other Python
+hackers (such winter holidays challenges are known as "advent of
+code" (of course, unless you believe there's only one of them)): can you
+write a more complete implementation? Or maybe you did during this
+year? Please post about it somewhere (perhaps, python-ideas mailing
+list?).
+
+https://github.com/pfalcon/pyastinterp
+
+
+README with more details follows:
+
+pyastinterp
+===========
+
+This is an AST interpreter (also known as tree-walking interpreter) for
+the Python programming language, written in Python itself. It is thus
+a meta-circular interpreter. While Python implementations of a Python VM
+(i.e. bytecode interpreters) are relatively well known (starting with
+PyPy), AST interpreters are much less common beyond those which implement
+a very limited subset of the syntax.
+
+Pyastinterp strives to fulfil 2 goals:
+
+1. Be as complete as possible (and see how much effort that takes and
+   if there're any limits).
+2. Yet be as minimal as possible, avoiding useless boilerplate and
+   reimplementing what may be already available.
+
+First goal is pretty obvious: ideally, we'd like Pyastinterp to be able
+to interpret (run) any application a native Python interpreter can.
+
+Second goal is rooted in many reasons. To start with, Pyastinterp is
+a spiritual part of the [Pycopy](https://github.com/pfalcon/pycopy)
+project, whose goal is the development of minimalist Python-compatible
+ecosystem. Besides, "bloated" meta-circular interpreters are well out
+there (the same PyPy) - there's lack on the opposite side of spectrum.
+Pyastinterp is also intended to be a "teaching" and "for-research"
+project. Surely, it's much easier to learn and reuse/repurpose a small,
+rather than large, project. These last requirements however also put
+bounds on "minimality": `pyastinterp` tries to have a clear focus
+(AST interpretation) and avoid unneeded boilerplate, but not be
+obfuscated, and actually tries to be clear and easily hackable (provide
+some reusable infrastructure), even at the expense of somewhat less
+optimality/performance.
+
+To achieve the goals of minimality, `pyastinterp` does following:
+
+1. Is concerned with syntax, not semantics (largely).
+2. That means that it tries to interpret Python AST tree, but
+   relies on the underlying Python runtime to implement the actual
+   operations (semantics). In some cases `pyastinterp` actually
+   has to deal with runtime semantics, but the point is that it
+   should be done only when there's no other choice (i.e. rarely).
+3. This in particular means that `pyastinterp` itself requires a
+   (pretty) full Python implementation to run, it's not the case
+   that it's written in "some subset of Python". (Contrast that
+   with e.g. PyPy's RPython, which is a Python subset language,
+   in which interpreters are written).
+4. Another consequence is that there's no semantic separation
+   between "metalevel" (level of the interpreter) and target
+   application level. This is again unlike PyPy, where 2 are explicitly
+   separated. Lack of separation allows to save on "marshalling"
+   values between the 2 levels, but also make it possible to have
+   "leaks" between levels, e.g. unexpected and unhandled exception
+   in the interpreter to be delivered to the application, causing
+   havoc and confusion. Pyastinterp's response to this concern
+   is a pledge that there shouldn't be such unhandled interpreter-level
+   exceptions. Of course, catching all such cases may take quite
+   a lot of testing and debugging, and fixing them may affect code
+   minimality and clarity. We'll see how it goes.
+5. However, due to choices described above, implementation of many
+   syntactic constructs is very clear, concise, and isomorphic
+   between the target and meta levels. See e.g. how "if" statement
+   is implemented: the implementation looks almost exactly how the
+   usage of the "if" statement is.
+
+
+Supported Python subset
+-----------------------
+
+Pyastinterp should implement almost all Python3.5 features, stopping
+at generators, which are not that easy to implement in a tree-walking
+interpreter. It also does not include import hook, so the imported
+modules are interpreted by the underlying Python VM, not by
+Pyastinterp.
+
+
+Running
+-------
+
+Quick way to run something interesting:
+
+    wget https://raw.githubusercontent.com/python/cpython/3.6/Lib/test/pystone.py
+    python3 -m astinterp pystone.my 10000
+
+You can pass any other script on the command line and see how it goes.
+
+
+Credits and licensing
+---------------------
+
+Pyastinterp is (c) [Paul Sokolovsky](https://github.com/pfalcon) and
+is released under the MIT license.
+
+
+
+-- 
+Best regards,
+ Paul                          mailto:pmiscml@gmail.com
+
+</pre>
+<h2><a name="10">ANN: SfePy 2020.4</a></h2>
+<pre>I am pleased to announce the release of SfePy 2020.4.
+
+Description
+-----------
+
+SfePy (simple finite elements in Python) is a software for solving systems of
+coupled partial differential equations by finite element methods. It is
+distributed under the new BSD license.
+
+Home page: https://sfepy.org
+Mailing list: https://mail.python.org/mm3/mailman3/lists/sfepy.python.org/
+Git (source) repository, issue tracker: https://github.com/sfepy/sfepy
+
+Highlights of this release
+--------------------------
+
+- Ogden hyperelastic term
+- serendipity finite element basis of orders 1-3
+
+For full release notes see [1].
+
+Cheers,
+Robert Cimrman
+
+[1] http://docs.sfepy.org/doc/release_notes.html#id1
+
+---
+
+Contributors to this release in alphabetical order:
+
+Robert Cimrman
+Jan Heczko
+Vladimir Lukes
+
+</pre>
+
+          </body>
+        </html>
+        
