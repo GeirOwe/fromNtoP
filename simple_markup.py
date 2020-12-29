@@ -58,6 +58,7 @@ def apply_html_tags(theBlock, blockNo):
                     print('</ul>')
 #end function
 
+# ----- START OF PROGRAMME ------------
 #clear the console and start the programme
 os.system('clear')
 print('< the beginning >')
