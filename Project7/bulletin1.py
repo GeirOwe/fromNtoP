@@ -66,10 +66,14 @@ print("""
 
 #read all messages
 curs.execute('SELECT * FROM messages')
-rowList = curs.fetchall()
 
 #in the code below the rows must be of typ dict, 
 #so the list must be have all rows as dict
+#   from the book:
+#   names = [d[0] for d in curs.description]
+#   rows = [dict(zip(names, row)) for row in curs.fetchall()]
+#my alternative:
+rowList = curs.fetchall()
 rows = conv_list_to_dict(rowList)
 
 toplevel = []
